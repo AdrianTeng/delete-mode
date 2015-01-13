@@ -4,9 +4,13 @@
 
 ;;; Commentary:
 ;; This package replaces a collection of kill commands shortcuts with a respective delete version.
+
 ;; Currently the following commands are replaced:
 ;; kill-word              (<C-delete>, M-d)
 ;; backward-kill-word     (<C-backspace>, M-DEL)
+
+;; This package also supports `subword-mode'. If `subword-mode' is on, then `subword-kill' and
+;; `backward-subword-kill' will be replaced by a corresponding delete version.
 
 ;;; Code:
 
@@ -62,7 +66,10 @@ backward-delete-word.  With argument ARG, do this that many times"
  "This package replaces a collection of kill commands shortcuts with a respective delete version.
 Currently the following commands are replaced:
 kill-word              (<C-delete>, M-d)
-backward-kill-word     (<C-backspace>, M-DEL)"
+backward-kill-word     (<C-backspace>, M-DEL)
+This package also supports `subword-mode'. If `subword-mode' is on, then `subword-kill' and
+`backward-subword-kill' will be replaced by a corresponding delete version.
+"
   :lighter " del"
   :keymap delete-mode-map)
 
