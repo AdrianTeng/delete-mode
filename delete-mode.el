@@ -43,17 +43,17 @@ With argument ARG, do this that many times."
   "If `subword-mode' is on, run subword-delete, otherwise run delete-word.
 With argument ARG, do this that many times"
   (interactive "p")
-  (if (subword-mode)
-      (subword-delete (arg))
-    (delete-word (arg))))
+  (if (boundp 'subword-mode)
+      (subword-delete (arg)))
+    (delete-word arg))
 
 (defun backward-delete-word-dwim (arg)
   "If `subword-mode' is on, run backward-subword-delete, otherwise run\
 backward-delete-word.  With argument ARG, do this that many times"
   (interactive "p")
-  (if (subword-mode)
+  (if (boundp 'subword-mode)
       (backward-subword-delete (arg))
-    (backward-delete-word (arg))))
+    (backward-delete-word arg)))
 
 (defvar delete-mode-map (make-keymap)
   "Kepmap for delete-mode.")
